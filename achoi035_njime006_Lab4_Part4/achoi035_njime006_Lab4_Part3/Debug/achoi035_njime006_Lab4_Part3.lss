@@ -15,11 +15,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   5 .debug_aranges 00000218  00000000  00000000  00000e8c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000028f1  00000000  00000000  000010a4  2**0
+  6 .debug_info   000028f0  00000000  00000000  000010a4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000ef2  00000000  00000000  00003995  2**0
+  7 .debug_abbrev 00000ef2  00000000  00000000  00003994  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   0000190c  00000000  00000000  00004887  2**0
+  8 .debug_line   0000190c  00000000  00000000  00004886  2**0
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  000005b4  00000000  00000000  00006194  2**2
                   CONTENTS, READONLY, DEBUGGING
@@ -425,8 +425,8 @@ void LedSecTask() {
     for(;;) { 	
         LEDS_Tick();
  220:	73 df       	rcall	.-282    	; 0x108 <LEDS_Tick>
-        vTaskDelay(100); 
- 222:	84 e6       	ldi	r24, 0x64	; 100
+        vTaskDelay(10); 
+ 222:	8a e0       	ldi	r24, 0x0A	; 10
  224:	90 e0       	ldi	r25, 0x00	; 0
  226:	26 d5       	rcall	.+2636   	; 0xc74 <vTaskDelay>
  228:	fb cf       	rjmp	.-10     	; 0x220 <LedSecTask+0x4>

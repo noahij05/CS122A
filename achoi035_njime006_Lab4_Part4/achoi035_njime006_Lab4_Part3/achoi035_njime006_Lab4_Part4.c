@@ -1,7 +1,7 @@
 /*	Name & E-mail: Alexander Choi, achoi035@ucr.edu
  *  Name & E-mail: Noah Jimenez, njime006@ucr.edu
  *	Lab Section: 021
- *	Assignment: Lab 4 Exercise 3
+ *	Assignment: Lab 4 Exercise 1
  *	
  *	I acknowledge all content contained herein, excluding template 
  * 	or example code, is my own original work.
@@ -145,7 +145,7 @@ void LedSecTask() {
     LEDS_Init();
     for(;;) { 	
         LEDS_Tick();
-        vTaskDelay(100); 
+        vTaskDelay(10); 
     } 
 }
 
