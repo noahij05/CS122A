@@ -72,7 +72,7 @@ void LEDS_Tick1(){
 
 enum LEDState2 {INITT,L00,L22} led_state2;
 
-void LEDS_Init(){
+void LEDS_Init2(){
 	led_state2 = INITT;
 }
 
@@ -117,17 +117,33 @@ void LEDS_Tick2(){
 	}
 }
 
-void LedSecTask() {
-    LEDS_Init();
+void LedSecTask1() {
+    LEDS_Init1();
     for(;;) { 	
         LEDS_Tick1();
-        vTaskDelay(1000); 
+        vTaskDelay(500); 
     } 
 }
 
+void LedSecTask2() {
+	LEDS_Init2();
+	for(;;) {
+		LEDS_Tick2();
+		vTaskDelay(1000);
+	}
+}
+
+void LedSecTask3() {
+	LEDS_Init3();
+	for(;;) {
+		LEDS_Tick3();
+		vTaskDelay(2500);
+	}
+}
+
 void StartSecPulse(unsigned portBASE_TYPE Priority) {
-    xTaskCreate(LedSecTask, 
-            (signed portCHAR *)"LedSecTask", 
+    xTaskCreate(LedSecTask1, 
+            (signed portCHAR *)"LedSecTask1", 
             configMINIMAL_STACK_SIZE, 
             NULL, 
             Priority, 
